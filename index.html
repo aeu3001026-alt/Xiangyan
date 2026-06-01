@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title> Maori cultural practices and values </title>
+  <script src="analytics.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .centered-heading {
+        text-align: center;
+        color: black;
+        font-size:20px ;
+        margin-bottom: 10px;
+
+    }
+    img { float: left;
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+    html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+    body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* This targets your main content area holding the text and videos */
+main, .content-container { 
+    flex: 1 0 auto; /* This forces the content to take up all available space, pushing the footer down */
+}
+/* Container layout */
+.content-area {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsive design for tablet and desktop */
+@media (min-width: 768px) {
+  .content-area {
+    grid-template-columns: 1.2fr 0.8fr; /* Video side is slightly wider */
+  }
+}
+
+/* Responsive video wrapper (16:9 aspect ratio) */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; 
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Form styling for a clean look */
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-section input, 
+.form-section select, 
+.form-section textarea {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.form-section button {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #007bff;
+  color: black;
+  border: none;
+  cursor: pointer;
+}
+
+
+    footer {
+    flex-shrink: 0;
+}
+    footer {
+        text-align: center;
+        padding: 3px;
+        background-color: DarkSalmon;
+        color: black;
+        margin-bottom: 0 auto;
+      }
+      /* Desktop View: Sits side-by-side */
+.content-container {
+    display: flex;
+}
+
+/* Mobile View: Gives elements full width when space is tight */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column; 
+    }
+    
+input[type="text"], input[type="email"] {
+        width: 100%; /* Makes form fields stretch to fit the screen width nicely */
+    }
+}
+
+<script>
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } lse {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    /* check if e-mail address is well-formed*/
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";}
+
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Login.html">Login</a></li>
+        <li><a href="cultural_practices.html">Cultural practices</a></li>
+    </ul>
+    </nav>
+        <img src="C:\Users\A2E Student\OneDrive - Aspire2 Group Limited\Pictures\Screenshots\logo.png" style="width:100px; height:70px; float: left;">
+        <h1 class="centered-heading"> Home page</h1>
+        <h2 class="centered-heading"> Welcome to home page</h2><br>
+      </header>
+  <main>
+        <div class="left" style="width: 30%; height: 100px; float: left;">New Zealand culture is a dynamic synthesis of indigenous Māori heritage, British colonial roots, and vibrant Pacific and Asian influences. Often described as "Kiwis," New Zealanders are known for their egalitarianism, deep connection to the outdoors, and laid-back friendliness.<br>
+       
+        <p> New Zealand society is modern, egalitarian, and increasingly multicultural, defined by a strong connection to the natural environment, a laid-back lifestyle, and a deep appreciation for a healthy work-life balance.</p></div>
+        <div class="middle" style="width: 40%; height: 100px; margin: 0 auto; margin-left: 0 auto;">
+            <iframe iframe width: 100px; height: 50PX src="https://www.youtube.com/embed/rQzf_umkdRk?si=6CSk66sW4EkN4Em-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width: 100px; height: 50PX src="https://www.youtube.com/embed/KrA79mqEZnA" title="New Zealand National Anthem (Full Version)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="right" style="width: 30%; height: 100px; float: right; margin-top: 0 auto;">
+         <form>
+            <label for="fname">First name:</label><br>
+            <input type="text"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text"><br>
+            <label for="email">Email address:</label><br>
+            <input type="email_address"><br>
+            <label for="subject">subject of message:</label><br>
+            <input type="text"><br>
+            <label for="textarea"></label><br>
+            <textarea rows="10" cols="20"></textarea><br>
+            <button style="font-size:24px">Sent<i class="material-icons"></i></button></form><br>
+        </div>
+      </main>
+        <script src="script.js"></script>
+      </body>
+      <footer>
+          <p>&copy; 2026, Mori cultural. All rights reserved
+          </p>
+      </footer>
+      
+          
+        
+      </html>
+    
+
+       
+
+        
+
+           
+
+                  
+
+        
+        
+       
+
+         
+
+</body>
+
+</html>  
+        
+    
