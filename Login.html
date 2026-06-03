@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>Maori Cultural Practices and Values</title>
+    <script src="analytics.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .centered-heading {
+        text-align: center;
+        color: black;
+        font-size:20px ;
+        margin-bottom: 10px;
+    }
+        .username {display: inline-block; width: 50%; float: left;
+        }
+        .password {display: inline-block; width: 50%; float: right;
+        }
+       
+    button {
+       background-color: #3248a8;
+       color: white;
+       padding: 15px 25px;
+       text-align: center;
+       text-decoration: none;
+       display: inline-block;
+       margin:90px 250px;
+       cursor: pointer;
+       border: none;
+        }
+ /* 1. Force the browser to use the full screen height */
+ body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Takes up 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+}
+ /* 1. Force the browser to use the full screen height */
+ body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Takes up 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+} 
+.Submit {
+    flex: 1 0 auto; /* This forces the content to take up all available space, pushing the footer down */
+         display: inline-block;
+
+}
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: black;
+            margin-bottom: 0 auto;
+            position: fixed;
+            width: 100%;
+            margin-top: auto;
+              }
+
+         
+        
+
+
+        
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+    // 1. Grab the values from the input fields
+    const usernameInput = document.getElementById("username").value.trim();
+    const passwordInput = document.getElementById("password").value;
+
+    // 2. Define validation rules (Regular Expressions)
+    // Username: 3-16 characters, letters, numbers, underscores, or hyphens
+    const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
+    
+    // Password: At least 8 characters, contains at least 1 letter and 1 number
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    // 3. Validate Username
+    if (!usernameRegex.test(usernameInput)) {
+        event.preventDefault(); // Stop form from submitting
+        alert("Invalid Username!\n• Must be 3 to 16 characters long.\n• No spaces allowed.\n• Only letters, numbers, hyphens(-), or underscores(_) allowed.");
+        return; // Stop checking further if username fails
+    }
+
+    // 4. Validate Password
+    if (!passwordRegex.test(passwordInput)) {
+        event.preventDefault(); // Stop form from submitting
+        alert("Invalid Password!\n• Must be at least 8 characters long.\n• Must contain at least one letter.\n• Must contain at least one number.");
+        return;
+    }
+
+    // If both pass, the form will naturally submit successfully!
+    alert("Validation successful! Logging you in...");
+});
+        
+    </style>
+
+    <header>
+    <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Login.html">Login</a></li>
+        <li><a href="cultural_practices.html">Cultural practices</a></li>
+    </ul>
+    </nav>
+        <img src="C:\Users\A2E Student\OneDrive - Aspire2 Group Limited\Pictures\Screenshots\logo.png" style="width:100px; height:70px; float: left;">
+        <h1 class="centered-heading"> Login page</h1>
+        <h2 class="centered-heading"> Welcome to Login page</h2><br>
+      </header>
+      <body>
+       <form id="loginForm">
+    <div class="username">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username">
+    </div>
+    <div class="password"> 
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password">
+    </div>
+    <div class="Submit">
+    <button type="Submit">Submit<i class="material-icons">
+</i></button>
+  
+</form>
+</body>
+<footer>
+          <p>&copy; 2026, Maori cultural. All rights reserved
+          </p>
+      </footer>
+      </html>
