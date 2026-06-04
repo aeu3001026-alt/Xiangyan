@@ -13,68 +13,45 @@
     .centered-heading {
         text-align: center;
         color: black;
-        font-size:20px ;
+        font-size:18px ;
         margin-bottom: 10px;
 
     }
-    img { float: left;
-        margin-right: 15px;
-        margin-bottom: 5px;
-    }
-    html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-}
-
-    body {
-    display: flex;
-    flex-direction: column;
-}
-
-/* This targets your main content area holding the text and videos */
-main, .content-container { 
+    main { display: inline-block;
+          flex-dirction:colum;
+         }
+/* This targets your main content area holding the text, and videos */
+.main { 
     flex: 1 0 auto; /* This forces the content to take up all available space, pushing the footer down */
+    display: block;
+
 }
+/* This turns the container into a flexbox, alignment side-by-side */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;   /* Aligns items horizontally */
+    justify-content: space-between; /* Creates clean space between left and right */
+    align-items: flex-start; /* Aligns tops of both sections perfectly */
+    gap: 30px;             /* Adds a 30px gap so they don't touch */
+    margin-top: 20px;
+}
+
 /* Container layout */
-.content-area {
-  display: grid;
-  grid-template-columns: 1fr; /* Single column for mobile */
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.text-section {
+  display: inline-block;
+  width: 30%;
+  float: left;
 }
-
-/* Responsive design for tablet and desktop */
-@media (min-width: 768px) {
-  .content-area {
-    grid-template-columns: 1.2fr 0.8fr; /* Video side is slightly wider */
-  }
-}
-
-/* Responsive video wrapper (16:9 aspect ratio) */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; 
-  height: 0;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
 /* Form styling for a clean look */
-.form-section form {
-  display: flex;
-  flex-direction: column;
+.form-section {
+  width: 30%;
+  float: right;
+  display: inline-block;
+}
+.video-section {
+  width: 25%;
+  display: block;
+  display: inline-block;
 }
 
 .form-section label {
@@ -91,62 +68,37 @@ main, .content-container {
 }
 
 .form-section button {
-  margin-top: 15px;
-  padding: 12px;
-  background-color: #007bff;
+  margin-top: 25px;
+  padding: 5px 5px;
+  background-color: white;
   color: black;
-  border: none;
+  border-color: black;
   cursor: pointer;
+
 }
-
-
-    footer {
-        text-align: center;
-        padding: 3px;
-        background-color: DarkSalmon;
-        color: black;
-        margin-bottom: auto;
-        flex-shrink: 0;
-      }
-      /* Desktop View: Sits side-by-side */
-.content-container {
-    display: flex;
+/* footer style*/
+footer {
+    flex-shrink: 0;
 }
-
-/* Mobile View: Gives elements full width when space is tight */
-@media (max-width: 768px) {
-    .content-container {
-        flex-direction: column; 
-    }
-    
-input[type="text"], input[type="email"] {
-        width: 100%; /* Makes form fields stretch to fit the screen width nicely */
-    }
+footer {
+    display: block;
+    text-align: center;
+    padding: 3px;
+    color: black;
+    margin-bottom: 0 auto;
+    background-color: #cce6ff ;
 }
-
-<script>
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
-  } lse {
-    $name = test_input($_POST["name"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
+/
     }
+/* Responsive design for desktop */
+  @media (min-width: 600px) {
+           flex-direction: grid-row: ; 
   }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    /* check if e-mail address is well-formed*/
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";}
-
 </style>
+<script src="script.js" defer></script>
 </head>
 <body>
+  <-- header section-->
   <header>
     <nav>
     <ul>
@@ -155,43 +107,61 @@ input[type="text"], input[type="email"] {
         <li><a href="cultural_practices.html">Cultural practices</a></li>
     </ul>
     </nav>
-        <img src="logo.png" style="width:100px; height:70px; float: left;">
+        <img src="C:\Users\A2E Student\OneDrive - Aspire2 Group Limited\Pictures\Screenshots\logo.png" style="width:100px; height:70px; float: left;">
         <h1 class="centered-heading"> Home page</h1>
         <h2 class="centered-heading"> Welcome to home page</h2><br>
       </header>
+      <--content section-->
   <main>
-        <div class="left" style="width: 30%; height: 100px; float: left;">New Zealand culture is a dynamic synthesis of indigenous Māori heritage, British colonial roots, and vibrant Pacific and Asian influences. Often described as "Kiwis," New Zealanders are known for their egalitarianism, deep connection to the outdoors, and laid-back friendliness.<br>
+        <div class="text-section">New Zealand culture is a dynamic synthesis of indigenous Māori heritage, British colonial roots, and vibrant Pacific and Asian influences. Often described as "Kiwis," New Zealanders are known for their egalitarianism, deep connection to the outdoors, and laid-back friendliness.<br>
        
         <p> New Zealand society is modern, egalitarian, and increasingly multicultural, defined by a strong connection to the natural environment, a laid-back lifestyle, and a deep appreciation for a healthy work-life balance.</p></div>
-        <div class="middle" style="width: 40%; height: 100px; margin: 0 auto; margin-left: 0 auto;">
-            <iframe iframe width: 100px; src="https://www.youtube.com/embed/rQzf_umkdRk?si=6CSk66sW4EkN4Em-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
-            <iframe width: 100px; src="https://www.youtube.com/embed/KrA79mqEZnA" title="New Zealand National Anthem (Full Version)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-        <div class="right" style="width: 30%; height: 100px; float: right; margin-top: 0 auto;">
+        <div class="video-section">
+            <iframe iframe width: 100px; height: 50PX src="https://www.youtube.com/embed/rQzf_umkdRk?si=6CSk66sW4EkN4Em-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br><br>
+            <iframe width: 100px; height: 50px src="https://www.youtube.com/embed/KrA79mqEZnA" title="New Zealand National Anthem (Full Version)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        <div class="form-section">
          <form>
+          <!--form with submit event handle-->
+          <form onsubmit="handlesubmit(event)">
             <label for="fname">First name:</label><br>
-            <input type="text"><br>
+            <input type="text"required><br>
             <label for="lname">Last name:</label><br>
-            <input type="text"><br>
+            <input type="text"required><br>
             <label for="email">Email address:</label><br>
-            <input type="email_address"><br>
+            <input type="email_address"required><br>
             <label for="subject">subject of message:</label><br>
-            <input type="text"><br>
+            <input type="text"required><br>
             <label for="textarea"></label><br>
-            <textarea rows="10" cols="20"></textarea><br>
-            <button style="font-size:24px">Sent<i class="material-icons"></i></button></form><br>
-        </div>
-      </main>
-        <script src="script.js"></script>
+            <textarea rows="10" cols="20"required></textarea><br>
+            <button style="font-size:24px">Sent</button></form></form><br><br> 
+            </div>   
+      </main>        
+      <script>
+  document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+const name = document.getElementById("name").value.trim();onst email = document.getElementById("email").value.trim();
+const feedback = document.getElementById("feedback").value.trim();
+       if (name & email & feedback) {
+     alert('Message sent successfully!');
+   }
+    // Optional: this.submit(); // Uncomment if you want to submit the form
+       else {
+        alert("Please fill all the fields!");
+        }
+      });
+</script> 
       </body>
+      <-- footer section-->
       <footer>
-          <p>&copy; 2026, Mori cultural. All rights reserved
+          <p>&copy; 2026, Maori cultural. All rights reserved
           </p>
       </footer>
+      </html>
       
           
         
-      </html>
-    
+     
 
        
 
@@ -211,4 +181,5 @@ input[type="text"], input[type="email"] {
 
 </html>  
         
+    
     
