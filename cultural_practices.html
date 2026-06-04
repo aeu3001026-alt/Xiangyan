@@ -9,6 +9,7 @@
     <script src="analytics.js" defer></script>
     <link rel="stylesheet" href="style.css">
  <style>
+    /* header style*/
     .centered-heading {
         text-align: center;
         color: black;
@@ -18,6 +19,7 @@
     .iframe {
         display: block;
     }
+
     /* table design*/
     table, th, td {
      border: 1px solid black;
@@ -35,29 +37,28 @@
       width: 35%;
       float: left;
     }
-    /* Responsive design for desktop */
-  @media (min-width: 1024px) {
-           flex-direction: column; } 
     .div { 
          flex: 1 0 auto; /* This forces the content to take up all available space, pushing the footer down */
-         display: inline-block;
+         display: inline-flex;
     }
 
-    /* footer CSS design*/
-    footer {
-        background-color: #cce6ff;
-        color: black;
-        margin-bottom: 0 auto;
-    }
-    /* Responsive design for desktop */
+/* footer style */
+ footer {
+     text-align: center;
+     padding: 3px;
+     background-color:  #cce6ff;
+     color: black;
+     display: block;
+     clear: both;
+     width: 100%;
+        }
+         /* Responsive design for desktop */
         @media (min-width: 1024px) {
-                flex-direction: grid-row: ; 
-            }
-            
+                display: block ; 
+            }  
 </style>
-</head>
-<body> 
-<!--header section -->
+</head> 
+<!-- header section -->
     <header>
     <nav>
     <ul>
@@ -66,15 +67,14 @@
         <li><a href="cultural_practices.html">Cultural practices</a></li>
     </ul>
     </nav>
-        <img src="logo.png" style="width:100px; height:70px; float: left;">
+        <img src="C:\Users\A2E Student\OneDrive - Aspire2 Group Limited\Pictures\Screenshots\logo.png" style="width:100px; height:70px; float: left;">
         <h1 class="centered-heading"> Culture practices page</h1>
         <h2 class="centered-heading"> Welcome to culture practices page</h2><br>
       </header>
-<!--content section -->
-    <main>
+<!-- content section -->
       <iframe width="100%" height="190" src="https://www.youtube.com/embed/Hc2VbRlHpX0" title="New Zealand, the Maori Heritage | SLICE | FULL DOCUMENTARY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <div class="table_1">
-      <table>
+      <!--table_1 section -->
+    <table class="table_1">
             <tr>
                 <th>Name</th>
                 <th style="text-align: center;">description</th>
@@ -100,10 +100,8 @@
             </td>
         </tr>
     </table>
-  </div>
-        <!--table_2 section -->
-    <div class="table_2">
-       <table>
+  <!--table_2 section -->
+    <table class="table_2">
            <tr>
               <th>Image</th>
               <th>Name</th>
@@ -111,29 +109,22 @@
               <th>Name</th>
             </tr>
             <tr>
-              <td><img src="Haka.jpg" alt="Haka" width="170"></td>
+              <td><img src="C:\Users\A2E Student\Downloads\Haka.jpg" alt="Haka" width="170"></td>
               <td>Haka</td>
-              <td><img src="hangi.jpg" alt="Hangi" width="200"></td>
+              <td><img src="C:\Users\A2E Student\Downloads\hangi.jpg" alt="Hangi" width="200"></td>
               <td>Hangi</td>
             </tr> 
            <tr>
-              <td><img src="hongi.jpg" alt="Hongi" width="170"></td>
+              <td><img src="C:\Users\A2E Student\Downloads\hongi.jpg" alt="Hongi" width="170"></td>
               <td>Hongi</td>
-              <td><img src="ta moko.jpg" alt="Tamoko" width="200"></td>
+              <td><img src="C:\Users\A2E Student\Downloads\ta moko.jpg" alt="Tamoko" width="200"></td>
               <td>Tamoko</td>
            </tr>
-     </table>
- </div>
-</main>
-</body>
-    <!--footer section -->
-<footer style="clear: both; width: 100%; display: block; text-align: center; padding: 5px; margin-top: 20px;">
-          <p>&copy; 2026, Maori cultural. All rights reserved
-          </p>
-      </footer>
-</body>
+       </table>
+       <footer>
+    <p>© 2026, Maori cultural. All rights reserved</p>
+</footer>
 </html>
-        
 
             
 
