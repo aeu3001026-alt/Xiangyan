@@ -15,7 +15,9 @@
         font-size:20px ;
         margin-bottom: 10px;
     }
-
+    .iframe {
+        display: block;
+    }
     /* table design*/
     table, th, td {
      border: 1px solid black;
@@ -31,9 +33,11 @@
     .table_2 {
       display: inline-block;
       width: 35%;
-      float: right;
-      gap: 1%;
+      float: left;
     }
+    /* Responsive design for desktop */
+  @media (min-width: 1024px) {
+           flex-direction: column; } 
     .div { 
          flex: 1 0 auto; /* This forces the content to take up all available space, pushing the footer down */
          display: inline-block;
@@ -41,7 +45,7 @@
 
     /* footer CSS design*/
     footer {
-        background-color: DarkSalmon;
+        background-color: #cce6ff;
         color: black;
         margin-bottom: 0 auto;
     }
@@ -53,7 +57,7 @@
 </style>
 </head>
 <body> 
-
+<!--header section -->
     <header>
     <nav>
     <ul>
@@ -66,7 +70,7 @@
         <h1 class="centered-heading"> Culture practices page</h1>
         <h2 class="centered-heading"> Welcome to culture practices page</h2><br>
       </header>
-
+<!--content section -->
     <main>
       <iframe width="100%" height="190" src="https://www.youtube.com/embed/Hc2VbRlHpX0" title="New Zealand, the Maori Heritage | SLICE | FULL DOCUMENTARY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="table_1">
@@ -97,6 +101,7 @@
         </tr>
     </table>
   </div>
+        <!--table_2 section -->
     <div class="table_2">
        <table>
            <tr>
@@ -121,6 +126,7 @@
  </div>
 </main>
 </body>
+    <!--footer section -->
 <footer style="clear: both; width: 100%; display: block; text-align: center; padding: 5px; margin-top: 20px;">
           <p>&copy; 2026, Maori cultural. All rights reserved
           </p>
